@@ -8,9 +8,16 @@ import HoroscopeReport from './components/HoroscopeReport';
 import LoadingSpinner from './components/LoadingSpinner';
 
 const App: React.FC = () => {
+    
+  const defaultDob = () => {
+    const date = new Date();
+    date.setFullYear(date.getFullYear() - 25); // Default to 25 years ago
+    return date.toISOString().split('T')[0];
+  };
+
   const [userData, setUserData] = useState<UserData>({
     name: '',
-    dob: '',
+    dob: defaultDob(),
     tob: '',
     pob: '',
     lagna: 'මේෂ',

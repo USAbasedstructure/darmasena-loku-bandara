@@ -83,7 +83,7 @@ export const generateHoroscopeReport = async (userData: UserData): Promise<Horos
     Based on all this information, create a full horoscope report. Your entire output MUST be a single, valid JSON object, with no text before or after it. Use the following structure and content guidelines.
 
     Guidelines for each JSON field:
-    1.  punchline: A catchy, **balanced** one-sentence summary for the day, reflecting the mixed nature of the predictions.
+    1.  punchline: A catchy, **balanced** one-sentence summary for the day. This should capture the day's core emotional feeling, acknowledging both the potential for joy and the need for caution.
     2.  career: An array of 3-5 short, distinct Sinhala points. **Include a mix of potential opportunities (සතුටුදායක) and possible challenges (අභියෝගාත්මක).**
     3.  finance: An array of 3-5 short, distinct Sinhala points. **Include a mix of potential gains (ලාභ) and risks (අවදානම්).**
     4.  caution: An array of 2-3 short, distinct Sinhala points. Be very clear about potential "sad" or difficult situations (දුක්බර හෝ අපහසු). Include clear, gentle advice on what to *do* and what *not to do* (කරන්න/කරන්න එපා). Warn against impulsive (ආවේගශීලී) behavior if astrologically relevant.
@@ -92,7 +92,7 @@ export const generateHoroscopeReport = async (userData: UserData): Promise<Horos
     7.  planetaryInfluence: An array of 2-3 short, simple Sinhala points summarizing the general planetary effects for the day, covering both helpful and challenging influences.
     8.  lagnaBased: An array of 2-3 short, specific Sinhala points of advice or insights based on the user's Lagna (${userData.lagna}).
     9.  strengthsAndWeaknesses: An object containing two arrays: 'strengths' and 'weaknesses', each with 2-3 short Sinhala points about personal traits for the day.
-    10. loveAndRelationships: An array of 3-5 short, distinct Sinhala points. **Include both harmonious possibilities (සතුටුදායක) and potential points of conflict (ගැටළුකාරී).**
+    10. loveAndRelationships: An array of 3-5 short, distinct Sinhala points that touch on the emotional undertones of interactions. **Include both harmonious possibilities that could lead to happiness (සතුටුදායක) and potential points of conflict or misunderstanding that might cause sadness (දුක්බර).**
     11. healthAndWellness: An array of 3-5 short, distinct Sinhala points with health tips. CRUCIALLY, include specific dietary advice, such as a vegetable/fruit to eat (e.g., "මෙම එළවළුව අද දිනට සුදුසුයි") and one to avoid (e.g., "මෙම ආහාරය අදට සුදුසු නැත"). Be very specific.
     12. luckyNumber: An object with a 'number' (a single digit) and a 'reason' (a short Sinhala phrase explaining why).
     13. affirmation: A short, positive affirmation of 2-5 Sinhala words.
