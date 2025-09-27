@@ -1,0 +1,5 @@
+{
+  "name": "Dharmasena Loku Bandara Astrology Service",
+  "description": "An astrology web application that generates a personalized daily horoscope report in Sinhala based on user's birth details, using the Gemini API.",
+  "requestFramePermissions": []
+}
