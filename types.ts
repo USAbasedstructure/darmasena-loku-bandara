@@ -9,23 +9,23 @@ export interface UserData {
 
 export interface HoroscopeReportData {
   punchline: string;
-  career: string;
-  finance: string;
-  caution: string;
+  career: string[];
+  finance: string[];
+  caution: string[];
   travelDirection: string;
   clothingColor: string;
-  planetaryInfluence: string;
-  lagnaBased: string;
+  planetaryInfluence: string[];
+  lagnaBased: string[];
   strengthsAndWeaknesses: {
     strengths: string[];
     weaknesses: string[];
   };
-  loveAndRelationships: string;
-  healthAndWellness: string;
+  loveAndRelationships: string[];
+  healthAndWellness: string[];
   luckyNumber: {
     number: number;
     reason: string;
   };
   affirmation: string;
-  additionalInsights: string;
+  additionalInsights: string[];
 }

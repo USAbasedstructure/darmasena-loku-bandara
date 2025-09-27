@@ -94,7 +94,7 @@ const UserInputForm: React.FC<UserInputFormProps> = ({ userData, setUserData, on
         disabled={isLoading}
         className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-lg text-lg font-bold text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-900 focus:ring-indigo-500 disabled:bg-indigo-800 disabled:cursor-not-allowed transition-colors duration-200"
       >
-        {isLoading ? 'සකසමින් පවතී...' : 'හෙට වාර්තාව බලන්න'}
+        {isLoading ? 'සකසමින් පවතී...' : 'අද වාර්තාව බලන්න'}
       </button>
     </form>
   );
