@@ -6,6 +6,7 @@ import Header from './components/Header';
 import UserInputForm from './components/UserInputForm';
 import HoroscopeReport from './components/HoroscopeReport';
 import LoadingSpinner from './components/LoadingSpinner';
+import Biography from './components/Biography';
 
 const App: React.FC = () => {
     
@@ -20,6 +21,7 @@ const App: React.FC = () => {
     dob: defaultDob(),
     tob: '',
     pob: '',
+    currentResidence: '',
     lagna: 'මේෂ',
   });
   const [report, setReport] = useState<HoroscopeReportData | null>(null);
@@ -52,7 +54,7 @@ const App: React.FC = () => {
     setReport(null);
 
     // Enhanced validation
-    if (!userData.name || !userData.dob || !userData.tob || !userData.pob) {
+    if (!userData.name || !userData.dob || !userData.tob || !userData.pob || !userData.currentResidence) {
         setError("කරුණාකර සියලුම තොරතුරු ඇතුළත් කරන්න.");
         setIsLoading(false);
         return;
@@ -87,11 +89,11 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-slate-200 font-sans p-4 sm:p-6 md:p-8">
+    <div className="min-h-screen bg-black/20 text-slate-200 font-sans p-4 sm:p-6 md:p-8">
       <div className="max-w-4xl mx-auto">
         <Header />
 
-        <section className="my-8 p-4 bg-slate-800/60 border border-cyan-500/30 rounded-xl shadow-md text-center">
+        <section className="my-8 p-4 glass-effect rounded-xl text-center">
           <h2 className="text-xl font-semibold text-cyan-300 mb-2">අද දවසේ පොදු ග්‍රහ චලිතය</h2>
           {isDailyPredictionLoading ? (
             <p className="text-slate-400 animate-pulse">පූරෝකථනය ලබාගනිමින් පවතී...</p>
@@ -100,12 +102,14 @@ const App: React.FC = () => {
           )}
         </section>
 
+        <Biography />
+
         <main className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-slate-800/50 p-6 rounded-2xl shadow-lg border border-slate-700">
+          <div className="glass-effect p-6 rounded-2xl">
             <h2 className="text-2xl font-bold text-indigo-400 mb-6">ඔබගේ තොරතුරු</h2>
             <UserInputForm userData={userData} setUserData={setUserData} onSubmit={handleSubmit} isLoading={isLoading} />
           </div>
-          <div className="bg-slate-800/50 p-6 rounded-2xl shadow-lg border border-slate-700 flex flex-col items-center justify-center min-h-[300px]">
+          <div className="glass-effect p-6 rounded-2xl flex flex-col items-center justify-center min-h-[300px]">
             {isLoading && <LoadingSpinner />}
             {error && <p className="text-red-400 text-center">{error}</p>}
             {report && !isLoading && <HoroscopeReport report={report} userName={userData.name} />}

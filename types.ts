@@ -4,7 +4,17 @@ export interface UserData {
   dob: string;
   tob: string;
   pob: string;
+  currentResidence: string;
   lagna: string;
+}
+
+export interface Manifestations {
+  wealth: string[];
+  love: string[];
+  family: string[];
+  success: string[];
+  travel: string[];
+  health: string[];
 }
 
 export interface HoroscopeReportData {
@@ -28,4 +38,7 @@ export interface HoroscopeReportData {
   };
   affirmation: string;
   additionalInsights: string[];
+  manifestations: Manifestations;
+  negativeAspects: string[];
+  localEventsInfluence: string[];
 }
